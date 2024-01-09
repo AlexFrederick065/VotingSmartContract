@@ -1,28 +1,27 @@
-REMIX DEFAULT WORKSPACE
+Overview
+Voting Smart Contract is built on the Ethereum blockchain. This Contract enables the Voting Admin(Address from which the contract is deployed) to register candidates and voters. This contract also lets voting admin to start, stop the election and show the election results. Voter also has the option to delegate the voting to someone else. 
 
-Remix default workspace is present when:
-i. Remix loads for the very first time 
-ii. A new workspace is created with 'Default' template
-iii. There are no files existing in the File Explorer
+Structure
+- Constructor
+Contract has a constructor to store the address form which the contract is being deployed.
+- Structs
+The contract has two structs such as voterDetails for voter details, candidateDetails for candidate details.
+- Mapping
+Contract has 5 mappings for efficient retrieval and manipulation of data.
+- State Variables
+Contract has boolean and unsigned type interger.
+- Modifier
+Contract has a modifier which checks if the address from which the contract is being called is of Voting admin or not.
 
-This workspace contains 3 directories:
-
-1. 'contracts': Holds three contracts with increasing levels of complexity.
-2. 'scripts': Contains four typescript files to deploy a contract. It is explained below.
-3. 'tests': Contains one Solidity test file for 'Ballot' contract & one JS test file for 'Storage' contract.
-
-SCRIPTS
-
-The 'scripts' folder has four typescript files which help to deploy the 'Storage' contract using 'web3.js' and 'ethers.js' libraries.
-
-For the deployment of any other contract, just update the contract's name from 'Storage' to the desired contract and provide constructor arguments accordingly 
-in the file `deploy_with_ethers.ts` or  `deploy_with_web3.ts`
-
-In the 'tests' folder there is a script containing Mocha-Chai unit tests for 'Storage' contract.
-
-To run a script, right click on file name in the file explorer and click 'Run'. Remember, Solidity file must already be compiled.
-Output from script will appear in remix terminal.
-
-Please note, require/import is supported in a limited manner for Remix supported modules.
-For now, modules supported by Remix are ethers, web3, swarmgw, chai, multihashes, remix and hardhat only for hardhat.ethers object/plugin.
-For unsupported modules, an error like this will be thrown: '<module_name> module require is not supported by Remix IDE' will be shown.
+Functions
+- Add Candidate
+- Add Voter
+- Fetch Candidate
+- Fetch Voter
+- Start Election
+- Delegate Voting Right
+- Cast Vote
+- End Election
+- Show Results
+- Show Winner
+- Get Candidate List
